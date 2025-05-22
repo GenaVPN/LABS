@@ -6,7 +6,6 @@ from PyQt5.QtWidgets import QWidget, QMessageBox
 
 class MAIN(QMainWindow):
     def _Mesblock(self):
-
         mess = QMessageBox(self)
         mess.setMinimumSize(QSize(100,100))
         mess.addButton("100%", QMessageBox.AcceptRole)
@@ -14,7 +13,7 @@ class MAIN(QMainWindow):
         mess.setText("Хотите закрыть диалоговое окно?")
         mess.setWindowTitle("Диалог")
         mess.exec()
-        self.Label.setText(mess.clickedButton().text())
+        self.label.setText(mess.clickedButton().text())
 
 
     def __init__(self):
@@ -22,18 +21,14 @@ class MAIN(QMainWindow):
         self.label = QLabel()
         self.button = QPushButton("Нажми")
         layout = QVBoxLayout()
-        layout.addWidget(self.Label)
+        layout.addWidget(self.label)
         layout.addWidget(self.button)
         self.button.setFixedHeight(100)
         con = QWidget()
         con.setLayout(layout)
         self.setCentralWidget(con)
-        self.button.clicked.connect(self._Mesblock())
+        self.button.clicked.connect(self._Mesblock)
         self.setGeometry(300, 300, 500, 400)
-
-
-
-
 
 
 app = QApplication([])
