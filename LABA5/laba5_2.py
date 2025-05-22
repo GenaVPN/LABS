@@ -7,16 +7,14 @@ from PyQt5.QtWidgets import QWidget, QMessageBox
 class MAIN(QMainWindow):
     def Mesblock(self, s = None):
 
-        self.mess = QMessageBox(self)
-        self.mess.setMinimumSize(QSize(100,100))
-        self.mess.setText("Хотите закрыть диалоговое окно?")
-        self.mess.setWindowTitle("Диалог")
-        self.mess.setStandardButtons(QMessageBox.Yes| QMessageBox.No)
-        a = self.mess.exec()
-        if a == QMessageBox.Yes:
-            self.Label.setText("Yes")
-        else:
-            self.Label.setText("No")
+        mess = QMessageBox(self)
+        mess.setMinimumSize(QSize(100,100))
+        mess.addButton("100%", QMessageBox.AcceptRole)
+        mess.addButton("Конечно, нет", QMessageBox.RejectRole)
+        mess.setText("Хотите закрыть диалоговое окно?")
+        mess.setWindowTitle("Диалог")
+        mess.exec()
+        self.Label.setText(mess.clickedButton().text())
 
 
     def __init__(self):
@@ -41,7 +39,7 @@ class MAIN(QMainWindow):
 
     def clickk(self):
         self.Mesblock()
-        print("ИДИ В ПЕНЬ")
+
 
 
 
