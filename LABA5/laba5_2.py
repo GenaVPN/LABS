@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import QWidget, QMessageBox
 
 
 class MAIN(QMainWindow):
-    def Mesblock(self, s = None):
+    def _Mesblock(self):
 
         mess = QMessageBox(self)
         mess.setMinimumSize(QSize(100,100))
@@ -19,26 +19,18 @@ class MAIN(QMainWindow):
 
     def __init__(self):
         super().__init__()
-        lay = QVBoxLayout()
-
-        self.Label = QLabel()
-
-        self.but1 = QPushButton()
+        self.label = QLabel()
         self.button = QPushButton("Нажми")
-        lay.addWidget(self.Label)
-        lay.addWidget(self.button)
-        self.button.setCheckable(True)
-        self.Label.setFixedHeight(50)
+        layout = QVBoxLayout()
+        layout.addWidget(self.Label)
+        layout.addWidget(self.button)
         self.button.setFixedHeight(100)
-
         con = QWidget()
-        con.setLayout(lay)
+        con.setLayout(layout)
         self.setCentralWidget(con)
-        self.button.clicked.connect(self.clickk)
+        self.button.clicked.connect(self._Mesblock())
         self.setGeometry(300, 300, 500, 400)
 
-    def clickk(self):
-        self.Mesblock()
 
 
 
