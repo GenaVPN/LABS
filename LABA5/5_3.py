@@ -1,7 +1,6 @@
 from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QLabel, QVBoxLayout, QRadioButton, QSlider, \
     QHBoxLayout
-from  PyQt5.QtCore import QSize
-from PyQt5.QtWidgets import QWidget, QMessageBox
+from PyQt5.QtWidgets import QWidget
 from PyQt5.QtWidgets import QCheckBox
 
 from PyQt5.QtCore import Qt
