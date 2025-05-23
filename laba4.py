@@ -2,7 +2,6 @@ from PIL import Image
 import numpy
 def PIL_laba():
     with Image.open("ava.jpg") as img:
-        img = Image.open("ava.jpg")
         x, y = img.size
         print(f"Размер изображения {x}x{y}")
 
