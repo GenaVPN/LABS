@@ -1,6 +1,6 @@
 import random
 class KATTLEBELL:
-    def __init__(self, weight):
+    def __init__(self, weight:int):
         self.weight = int(weight)
     def __repr__(self):
         return str(self.weight)
