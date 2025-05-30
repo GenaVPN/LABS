@@ -14,8 +14,7 @@ def PIL_laba():
                 r,g,b = img.getpixel((i,j))
                 img3.putpixel((i,j), (255 - r,255 - g,255 - b))
         img3.save("img3.png")
-        img3.close()
-        img2.close()
+       
 
 def n_3_4():
     A = numpy.random.randint(0,100,100)
